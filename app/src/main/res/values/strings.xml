@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PrimaryMathTest</string>
+    <string name="start">开始答题</string>
+    <string name="examTitle">考试界面</string>
+    <string name="answer_correct">正确答案:</string>
+    <string name="answer_your">你的答案:</string>
+    <string name="time_remaining">剩余时间:</string>
 </resources>
