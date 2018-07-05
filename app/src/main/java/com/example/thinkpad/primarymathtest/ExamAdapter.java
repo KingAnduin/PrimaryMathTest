@@ -20,8 +20,8 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyHolder>{
 
    Context context;
    List<itemInfo> list;
-   int mark = 0;
 
+   //使ExamInterface能够得到更新后的list
     public List<itemInfo> getList() {
         return list;
     }
@@ -81,8 +81,10 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyHolder>{
         else{
             myHolder.answerTv.setVisibility(View.VISIBLE);
             myHolder.youAnswerEv.setText(list.get(position).yourAnswer);
+            //不可被点击
             myHolder.youAnswerEv.setEnabled(false);
         }
+        //监听EditView是否改变，如果改变就更新list中的yourAnswer
         myHolder.youAnswerEv.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -106,7 +108,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyHolder>{
         return list.size();
     }
 
-    //防止数据错位
+    //防止数据错位，非常重要！！！！！
     @Override
     public int getItemViewType(int position) {
         return position;

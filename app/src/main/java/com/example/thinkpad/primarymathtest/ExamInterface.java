@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -30,8 +29,7 @@ public class ExamInterface extends AppCompatActivity implements View.OnClickList
     String symbolStr = "+-*/";
     String questionStr = "";
     String answerStr = "233";
-    int timeInt = 30;
-    int mark = 0;
+
 
     private Toolbar mToolbar;
     private TextView timeTv;
@@ -80,18 +78,20 @@ public class ExamInterface extends AppCompatActivity implements View.OnClickList
         timer.start();
     }
 
-    //判断正误
+    //刷新recycleview的布局（非常必要）防止数据错位，并输出成绩和显示正确答案
     private void showResult(ExamAdapter adapter) {
         List<itemInfo> list = adapter.getList();
         adapter = new ExamAdapter(this,list,true);
+        //重新加载adapter布局，防止数据混乱
         recyclerView.setAdapter(adapter);
-        //adapter.update(list);
+        //算分
+        int mark = 0;
         for(int i=0;i<list.size();i++) {
-            if (Objects.equals(list.get(i).answer, list.get(i).yourAnswer)) {
+            if (list.get(i).answer.equals(list.get(i).yourAnswer)) {
                 mark += 10;
             }
         }
-        Toast.makeText(ExamInterface.this,"本次测验你的成绩为"+adapter.mark,Toast.LENGTH_SHORT).show();
+        Toast.makeText(ExamInterface.this,"本次测验你的成绩为"+mark,Toast.LENGTH_SHORT).show();
 
     }
 
