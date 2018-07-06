@@ -42,6 +42,7 @@
                 android:textColor="#ff0000"
                 android:textSize="20sp" />
         </LinearLayout>
+
         <Button
             android:id="@+id/item_finish"
             android:layout_width="wrap_content"
