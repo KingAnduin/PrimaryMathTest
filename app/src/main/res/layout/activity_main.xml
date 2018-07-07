@@ -20,7 +20,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/system_name"
             android:textColor="#000"
@@ -77,6 +78,16 @@
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_languagechange"
+        >
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,5 +95,5 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
         android:src="@mipmap/ic_teststart"
-        app:fabSize="normal" />
+        />
 </RelativeLayout>

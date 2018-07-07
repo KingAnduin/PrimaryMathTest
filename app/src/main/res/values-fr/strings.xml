@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PrimaryMathTest</string>
+    <string name="start">Commencer</string>
+    <string name="examTitle">L"interface de test</string>
+    <string name="answer_correct">Réponse:</string>
+    <string name="answer_your">Votre réponse:</string>
+    <string name="time_remaining">Temps restant:</string>
+    <string name="system_name">Quatre opérations de système de test</string>
+    <string name="text_warning">Cette fois le rapport de test record du nombre de questions correcte et total, chaque question 20.La temporisation est automatiquement remis, cliquez sur le bouton OK peut être remis à voir les résultats.</string>
+    <string name="text_needknow">Examen: </string>
+    <string name="text_start">Cliquez sur le bouton en bas à droite de commencer à entrer dans un essai! </string>
+    <string name="problem_num">Est le problème numéro:</string>
+    <string-array name="languageType">
+        <item>Chinois</item>
+        <item>En anglais</item>
+        <item>Japonais</item>
+        <item>Français</item>
+    </string-array>
+</resources>

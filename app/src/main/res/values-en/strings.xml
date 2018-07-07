@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PrimaryMathTest</string>
+    <string name="start">Start the answer</string>
+    <string name="examTitle">Examination interface</string>
+    <string name="answer_correct">The correct answer:</string>
+    <string name="answer_your">your answer:</string>
+    <string name="time_remaining">The remaining time:</string>
+    <string name="system_name">Four operation test system</string>
+    <string name="text_warning">The test used the correct ratio with the total number to record the scores, 20s for each question. Overtime will automatically hand over the volume, click the hand over button to hand over the results. </string>
+    <string name="text_needknow">Examination notes:</string>
+    <string name="text_start">Dear(づ￣3￣)づ╭❤～click the bottom right button to enter the test！</string>
+    <string name="problem_num">Set the number of questions:</string>
+    <string-array name="languageType">
+        <item>Chinese</item>
+        <item>English</item>
+        <item>Japanese</item>
+        <item>French</item>
+    </string-array>
+</resources>

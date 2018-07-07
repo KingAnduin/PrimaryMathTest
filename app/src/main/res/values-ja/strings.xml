@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PrimaryMathTest</string>
+    <string name="start">解答を始める </string>
+    <string name="examTitle">試験インターフェース</string>
+    <string name="answer_correct">正解:</string>
+    <string name="answer_your">あなたの答え</string>
+    <string name="time_remaining">残り時間：</string>
+    <string name="system_name">4つの演算テストシステム</string>
+    <string name="text_warning">今回の試験は、正確と総問題数の比値記録の成績を採用します。タイムアウトは自動的に交じることができます。</string>
+    <string name="text_needknow">試験の心得：</string>
+    <string name="text_start">親（づ￣3￣）づ識別子～右下をクリックして、解答ボタンを押してテストに入るよ！ </string>
+    <string name="problem_num">設定問題数：</string>
+    <string-array name="languageType">
+        <item>中国語</item>
+        <item>英語</item>
+        <item>日本語</item>
+        <item>フランス語</item>
+    </string-array>
+</resources>
