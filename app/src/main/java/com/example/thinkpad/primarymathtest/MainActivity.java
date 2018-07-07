@@ -10,7 +10,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Toast;
 
 import com.weigan.loopview.LoopView;
 
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mStartFb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "" + (mLoopView.getSelectedItem() + 5), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "" + (mLoopView.getSelectedItem() + 5), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, ExamInterface.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("sum", (mLoopView.getSelectedItem() + 5));

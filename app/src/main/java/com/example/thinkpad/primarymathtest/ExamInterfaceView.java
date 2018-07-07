@@ -48,7 +48,6 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_view);
-
         findView();
         init();
         updateUI(0);
