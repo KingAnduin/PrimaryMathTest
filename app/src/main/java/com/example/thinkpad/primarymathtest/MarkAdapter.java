@@ -60,6 +60,7 @@ public class MarkAdapter extends RecyclerView.Adapter<MarkAdapter.MyHolder>{
         View view = LayoutInflater.from(parent.getContext()).
                         inflate(R.layout.exam_item_layout, parent, false);
         myHolder = new MyHolder(view);
+
         return myHolder;
     }
 

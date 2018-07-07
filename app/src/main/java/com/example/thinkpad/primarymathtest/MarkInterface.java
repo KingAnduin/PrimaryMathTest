@@ -22,6 +22,7 @@ public class MarkInterface extends AppCompatActivity implements View.OnClickList
 
     ArrayList<itemInfo>list = new ArrayList<>();
     RecyclerView recyclerView;
+
     MarkAdapter adapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
