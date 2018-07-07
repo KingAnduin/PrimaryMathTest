@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ExamInterface"/>
+        <activity android:name=".ExamInterfaceView"/>
     </application>
 
 </manifest>

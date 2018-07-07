@@ -7,6 +7,7 @@
     android:clickable="true"
     app:cardCornerRadius="10dp">
 
+
     <RelativeLayout
         android:id="@+id/item"
         android:layout_width="match_parent"

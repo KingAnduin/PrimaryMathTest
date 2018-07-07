@@ -42,13 +42,7 @@
                 android:textColor="#ff0000"
                 android:textSize="20sp" />
         </LinearLayout>
-        <Button
-            android:id="@+id/item_finish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:text="交卷" />
+
     </RelativeLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout

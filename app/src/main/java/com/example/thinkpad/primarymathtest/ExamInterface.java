@@ -8,7 +8,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +32,7 @@ public class ExamInterface extends AppCompatActivity implements View.OnClickList
 
     private Toolbar mToolbar;
     private TextView timeTv;
-    Button finishBt;
+
     List<itemInfo> list = new ArrayList<>();
     RecyclerView recyclerView;
     ExamAdapter adapter;
@@ -71,37 +70,19 @@ public class ExamInterface extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onFinish() {
-                showResult(adapter);
                 Toast.makeText(ExamInterface.this, "考试结束", Toast.LENGTH_SHORT).show();
             }
         };
         timer.start();
     }
 
-    //刷新recycleview的布局（非常必要）防止数据错位，并输出成绩和显示正确答案
-    private void showResult(ExamAdapter adapter) {
-        List<itemInfo> list = adapter.getList();
-        adapter = new ExamAdapter(this,list,true);
-        //重新加载adapter布局，防止数据混乱
-        recyclerView.setAdapter(adapter);
-        //算分
-        int mark = 0;
-        for(int i=0;i<list.size();i++) {
-            if (list.get(i).answer.equals(list.get(i).yourAnswer)) {
-                mark += 10;
-            }
-        }
-        Toast.makeText(ExamInterface.this,"本次测验你的成绩为"+mark,Toast.LENGTH_SHORT).show();
-
-    }
 
 
     private void findView() {
         mToolbar = (Toolbar) findViewById(R.id.exam_toolbar);
+        setSupportActionBar(mToolbar);
         timeTv = findViewById(R.id.item_time);
         recyclerView = findViewById(R.id.rv_list);
-        finishBt = findViewById(R.id.item_finish);
-        finishBt.setOnClickListener(this);
     }
 
     //生成数学表达式expressStr
@@ -143,9 +124,7 @@ public class ExamInterface extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.item_finish:
-                showResult(adapter);
-                break;
+
         }
     }
 }

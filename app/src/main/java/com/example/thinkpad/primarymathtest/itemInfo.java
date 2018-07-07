@@ -1,10 +1,12 @@
 package com.example.thinkpad.primarymathtest;
 
+import java.io.Serializable;
+
 /**
  * Created by Thinkpad on 2018/7/5.
  */
 
-public class itemInfo {
+public class itemInfo implements Serializable{
     String question;
     String answer;
     String yourAnswer;

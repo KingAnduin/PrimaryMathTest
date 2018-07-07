@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/Lin_line1"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="30sp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questionTitle"/>
+        <TextView
+            android:text="1:"
+            android:textSize="30sp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/Tv_questionId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/Tv_remainingTime"
+            android:text="20s"
+            android:textSize="30sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_below="@id/Lin_line1"
+        android:id="@+id/Rel_line2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+
+            android:background="#ff9900"
+            android:layout_width="280dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/Tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="1+2+3+4+5"
+            android:textColor="#000"
+            android:layout_marginLeft="80dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/Rel_line3"
+        android:layout_below="@id/Rel_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <ImageView
+            android:id="@+id/Iv_yourAnswer"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:background="#66CC99"/>
+        <EditText
+            android:id="@+id/Et_yourAnswer"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="@string/hint"
+            android:gravity="center"
+            android:background="@null"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin_line4"
+        android:layout_below="@id/Rel_line3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/Btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:text="@string/confirm"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/Tv_next"
+            android:text="@string/next"
+            android:textSize="50sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
