@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PrimaryMathTest.iml" filepath="$PROJECT_DIR$/PrimaryMathTest.iml" />
-      <module fileurl="file://D:\Android3.0\PrimaryMathTest\PrimaryMathTest.iml" filepath="D:\Android3.0\PrimaryMathTest\PrimaryMathTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Android3.0\PrimaryMathTest\app\app.iml" filepath="D:\Android3.0\PrimaryMathTest\app\app.iml" />
     </modules>
   </component>
 </project>

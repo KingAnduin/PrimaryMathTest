@@ -5,4 +5,9 @@
     <string name="answer_correct">正确答案:</string>
     <string name="answer_your">你的答案:</string>
     <string name="time_remaining">剩余时间:</string>
+    <string name="system_name">四则运算测试系统</string>
+    <string name="text_warning">本次测验采用正确与总题数的比值记录成绩，每道题20s。超时会自动交卷，点击交卷按钮即可交卷查看成绩。</string>
+    <string name="text_needknow">考试须知:</string>
+    <string name="text_start">亲(づ￣3￣)づ╭❤～点击右下方开始答题按钮进入测试哦！</string>
+    <string name="problem_num">设置题数：</string>
 </resources>
