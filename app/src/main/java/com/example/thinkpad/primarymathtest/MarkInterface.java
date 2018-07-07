@@ -10,30 +10,36 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Thinkpad on 2018/7/5.
+ * 成绩展示界面
  */
 
 public class MarkInterface extends AppCompatActivity implements View.OnClickListener{
 
     private Toolbar mToolbar;
-    private TextView timeTv;
+    int mark=0;
 
-    ArrayList<itemInfo>list = new ArrayList<>();
+    List<itemInfo> list = new ArrayList<>();
     RecyclerView recyclerView;
-
+    TextView markTv;
     MarkAdapter adapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam);
-        findView();
+        setContentView(R.layout.activity_mark);
 
         list = (ArrayList<itemInfo>) getIntent().getSerializableExtra("list");
+        for(int i=0;i<list.size();i++){
+            if(list.get(i).yourAnswer.equals(list.get(i).answer))
+                mark++;
+        }
 
+        findView();
         //初始化适配器
-        adapter = new MarkAdapter(this,list,false);
+        adapter = new MarkAdapter(this,list);
         //配置layoutmanger
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -42,13 +48,12 @@ public class MarkInterface extends AppCompatActivity implements View.OnClickList
 
     }
 
-
-
     private void findView() {
         mToolbar = (Toolbar) findViewById(R.id.exam_toolbar);
         setSupportActionBar(mToolbar);
-        timeTv = findViewById(R.id.item_time);
         recyclerView = findViewById(R.id.rv_list);
+        markTv = findViewById(R.id.Tv_mark);
+        markTv.setText(mark+"/"+list.size());
     }
 
     @Override

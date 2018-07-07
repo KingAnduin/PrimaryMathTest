@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MarkInterface">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/exam_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_toolbar"
+        app:title="@string/mark"
+        app:titleMarginStart="10dp"
+        app:titleMarginTop="2dp"
+        app:titleTextColor="#fff">
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/student_mark"
+            android:textColor="#f00"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/Tv_mark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f00"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:text="1/1"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -43,16 +43,15 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:text="@string/answer_your"/>
-            <EditText
+            <TextView
                 android:id="@+id/item_youranswer"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@null"
-                android:gravity="right" />
+                android:layout_marginRight="10dp" />
         </LinearLayout>
 
         <View
@@ -77,12 +76,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/answer_correct" />
             <TextView
-
+                android:gravity="center"
                 android:id="@+id/item_answer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textSize="20sp" />
             <ImageView
                 android:layout_marginLeft="160dp"
@@ -92,6 +92,13 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_below="@id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="10dp"
+            android:background="#d1d1d1"/>
 
 
 

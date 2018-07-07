@@ -11,6 +11,10 @@
     <string name="text_needknow">Examen: </string>
     <string name="text_start">Cliquez sur le bouton en bas à droite de commencer à entrer dans un essai! </string>
     <string name="problem_num">Est le problème numéro:</string>
+    <string name="mark">Grade</string>
+    <string name="confirm">确认</string>
+    <string name="next">不玩了</string>
+    <string name="student_mark">Ce score de test</string>
     <string-array name="languageType">
         <item>Chinois</item>
         <item>En anglais</item>

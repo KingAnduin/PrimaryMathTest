@@ -6,8 +6,8 @@
     <string name="answer_correct">正确答案:</string>
     <string name="answer_your">你的答案:</string>
     <string name="time_remaining">剩余时间:</string>
-    <string name="confirm">确认</string>
-    <string name="next">不玩了</string>
+    <string name="confirm">confirmer</string>
+    <string name="next">prochain</string>
     <string name="hint">请输入你的答案</string>
     <string name="system_name">四则运算测试系统</string>
     <string name="text_warning">本次测验采用正确与总题数的比值记录成绩，每道题20s。超时会自动交卷，点击交卷按钮即可交卷查看成绩。</string>
@@ -15,6 +15,8 @@
     <string name="text_start">亲(づ￣3￣)づ╭❤～点击右下方开始答题按钮进入测试哦！</string>
     <string name="problem_num">设置题数：</string>
     <string name="language_change">语言改变</string>
+    <string name="mark">成绩</string>
+    <string name="student_mark">本次测试成绩</string>
     <string-array name="languageType">
         <item>中文</item>
         <item>英文</item>

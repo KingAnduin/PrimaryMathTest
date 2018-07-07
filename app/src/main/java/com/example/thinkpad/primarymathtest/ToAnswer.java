@@ -28,7 +28,7 @@ public class ToAnswer {
         int isPlus = 1;
         int isInteger = 0;
         String answer = "";
-        if(res.getnumerator()<0 || res.getdenominator()<0) {isPlus = 0;}
+        if(res.getnumerator()*res.getdenominator()<0) {isPlus = 0;}
         if (res.getdenominator() == 1) {isInteger = 1;}
 
         if (isPlus == 1) {

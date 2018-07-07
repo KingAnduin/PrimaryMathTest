@@ -32,6 +32,7 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
     private Button confirmBtn;
 
     List<itemInfo> list = new ArrayList<itemInfo>();
+    CountDownTimer timer;                   //定时器,应该设置成全局变量，方便回收
 
     private int questionNum;                //问题个数
     private int symbolNum;                  //符号个数（1-3）
@@ -45,6 +46,14 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
     String answerStr = "233";       //答案
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(timer!=null){
+            timer.cancel();
+        }
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_view);
@@ -56,14 +65,14 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
          * 倒计时 totalTime s，每1s执行一次onTick（）
          * 倒计时结束后执行onFinish（）
          */
-        CountDownTimer timer = new CountDownTimer(totalTime*1000,1000) {
+        timer = new CountDownTimer(totalTime*1000,1000) {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTick(long millisUntilFinished) {
                 if(countDown == 0){
                     countDown = 20;
                     if(questionId<questionNum)
-                    list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";   //保存用户该题答案
+                    list.get(questionId).yourAnswer = yourAnswerEt.getText().toString()+"";   //保存用户该题答案
                     questionId++;
                     updateUI(questionId);
                 }
@@ -76,11 +85,13 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
                 Toast.makeText(ExamInterfaceView.this, "考试结束", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
                 intent.setClass(ExamInterfaceView.this,MarkInterface.class);
-                intent.putExtra("lists",(Serializable)list );
+                intent.putExtra("list",(Serializable)list );
                 startActivity(intent);
+                finish();
             }
         };
         timer.start();
+
     }
 
     /**
@@ -175,22 +186,23 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
             case R.id.Btn_confirm:
                 countDown = 20;
                 if(questionId<questionNum)
-                list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";           //保存用户该题答案
+                list.get(questionId).yourAnswer = yourAnswerEt.getText().toString()+"";           //保存用户该题答案
                 questionId++;
                 if(questionId<questionNum)
                     updateUI(questionId);
                 else{
                     Intent intent = new Intent();
                     intent.setClass(ExamInterfaceView.this,MarkInterface.class);
-                    intent.putExtra("lists",(Serializable)list );
+                    intent.putExtra("list",(Serializable)list );
                     startActivity(intent);
+                    finish();
                 }
 
                 break;
             case R.id.Tv_next:
                 countDown = 20;
                 if(questionId<questionNum)
-                    list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";           //保存用户该题答案
+                    list.get(questionId).yourAnswer = yourAnswerEt.getText().toString()+"";           //保存用户该题答案
                 questionId++;
                 if(questionId<questionNum) {
                     updateUI(questionId);
@@ -198,8 +210,9 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
                 else{
                     Intent intent = new Intent();
                     intent.setClass(ExamInterfaceView.this,MarkInterface.class);
-                    intent.putExtra("lists",(Serializable)list );
+                    intent.putExtra("list",(Serializable)list );
                     startActivity(intent);
+                    finish();
                 }
                 break;
         }
