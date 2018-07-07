@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Thinkpad on 2018/7/5.
  */
 
-public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyHolder>{
+public class MarkAdapter extends RecyclerView.Adapter<MarkAdapter.MyHolder>{
 
    Context context;
    List<itemInfo> list;
@@ -29,7 +29,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.MyHolder>{
     boolean isVisible;
     MyHolder myHolder;
 
-   public ExamAdapter(Context context,List<itemInfo> list,boolean isVisible){
+   public MarkAdapter(Context context, List<itemInfo> list, boolean isVisible){
        this.context = context;
        this.list = list;
        this.isVisible = isVisible;

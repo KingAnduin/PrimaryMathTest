@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "" + (mLoopView.getSelectedItem() + 5), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, ExamInterface.class);
+                Intent intent = new Intent(MainActivity.this, ExamInterfaceView.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("sum", (mLoopView.getSelectedItem() + 5));
                 intent.putExtras(bundle);

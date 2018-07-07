@@ -24,21 +24,21 @@ import java.util.Random;
 
 public class ExamInterfaceView extends AppCompatActivity implements View.OnClickListener{
 
-    TextView questionIdTv;
-    TextView remainingTimeTv;
-    TextView questionTv;
-    TextView nextTv;
-    EditText yourAnswerEt;
-    Button confirmBtn;
+    private TextView questionIdTv;
+    private TextView remainingTimeTv;
+    private TextView questionTv;
+    private TextView nextTv;
+    private EditText yourAnswerEt;
+    private Button confirmBtn;
 
     List<itemInfo> list = new ArrayList<itemInfo>();
 
-    int questionNum;                //问题个数
-    int symbolNum;                  //符号个数（1-3）
-    int numRange;                   //数值范围（1-11）
-    int countDown;                  //倒计时，，默认20s
-    int questionId=0;                 //当前题号
-    int totalTime;                  //总时间
+    private int questionNum;                //问题个数
+    private int symbolNum;                  //符号个数（1-3）
+    private int numRange;                   //数值范围（1-11）
+    private int countDown;                  //倒计时，默认20s
+    private int questionId=0;                 //当前题号
+    private int totalTime;                  //总时间
 
     String symbolStr = "+-*/";
     String questionStr = "";        //数学表达式
@@ -54,7 +54,7 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
         updateUI(0);
 
         /**
-         * 倒计时300s，每1s执行一次onTick（）
+         * 倒计时 totalTime s，每1s执行一次onTick（）
          * 倒计时结束后执行onFinish（）
          */
         CountDownTimer timer = new CountDownTimer(totalTime*1000,1000) {
@@ -63,6 +63,7 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
             public void onTick(long millisUntilFinished) {
                 if(countDown == 0){
                     countDown = 20;
+                    if(questionId<questionNum)
                     list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";   //保存用户该题答案
                     questionId++;
                     updateUI(questionId);
@@ -74,6 +75,10 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
             @Override
             public void onFinish() {
                 Toast.makeText(ExamInterfaceView.this, "考试结束", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                intent.setClass(ExamInterfaceView.this,MarkInterface.class);
+                intent.putExtra("lists",(Serializable)list );
+                startActivity(intent);
             }
         };
         timer.start();
@@ -88,7 +93,7 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
 
         questionTv.setText(list.get(questionId).question);
         questionIdTv.setText(questionId + 1 + "");
-
+        yourAnswerEt.setText("");
     }
 
     /**
@@ -102,6 +107,7 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
             questionNum = bundle.getInt("sum",0);
             totalTime = questionNum*20;
             questionId = 0;
+            countDown = 20;
         }
 
         //随机生成试题与对应的答案
@@ -169,13 +175,14 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
         switch (view.getId()){
             case R.id.Btn_confirm:
                 countDown = 20;
+                if(questionId<questionNum)
                 list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";           //保存用户该题答案
                 questionId++;
-                if(questionId<20)
+                if(questionId<questionNum)
                     updateUI(questionId);
                 else{
                     Intent intent = new Intent();
-                    intent.setClass(ExamInterfaceView.this,ExamInterface.class);
+                    intent.setClass(ExamInterfaceView.this,MarkInterface.class);
                     intent.putExtra("lists",(Serializable)list );
                     startActivity(intent);
                 }
@@ -183,9 +190,18 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.Tv_next:
                 countDown = 20;
-                list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";           //保存用户该题答案
+                if(questionId<questionNum)
+                    list.get(questionId).yourAnswer = yourAnswerEt.toString()+"";           //保存用户该题答案
                 questionId++;
-                updateUI(questionId);
+                if(questionId<questionNum) {
+                    updateUI(questionId);
+                }
+                else{
+                    Intent intent = new Intent();
+                    intent.setClass(ExamInterfaceView.this,MarkInterface.class);
+                    intent.putExtra("lists",(Serializable)list );
+                    startActivity(intent);
+                }
                 break;
         }
     }
