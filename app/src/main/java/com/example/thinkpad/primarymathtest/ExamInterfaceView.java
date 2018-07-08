@@ -200,20 +200,7 @@ public class ExamInterfaceView extends AppCompatActivity implements View.OnClick
 
                 break;
             case R.id.Tv_next:
-                countDown = 20;
-                if(questionId<questionNum)
-                    list.get(questionId).yourAnswer = yourAnswerEt.getText().toString()+"";           //保存用户该题答案
-                questionId++;
-                if(questionId<questionNum) {
-                    updateUI(questionId);
-                }
-                else{
-                    Intent intent = new Intent();
-                    intent.setClass(ExamInterfaceView.this,MarkInterface.class);
-                    intent.putExtra("list",(Serializable)list );
-                    startActivity(intent);
-                    finish();
-                }
+                finish();
                 break;
         }
     }

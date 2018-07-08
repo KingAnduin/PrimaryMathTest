@@ -24,6 +24,7 @@
         <TextView
             android:id="@+id/Tv_remainingTime"
             android:text="20s"
+            android:textColor="#f00"
             android:textSize="30sp"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="150dp"
@@ -39,8 +40,8 @@
         <ImageView
 
             android:background="#ff9900"
-            android:layout_width="280dp"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="50dp"/>
 
         <TextView
@@ -63,13 +64,13 @@
         android:layout_marginTop="30dp">
         <ImageView
             android:id="@+id/Iv_yourAnswer"
-            android:layout_width="280dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginLeft="50dp"
             android:background="#66CC99"/>
         <EditText
             android:id="@+id/Et_yourAnswer"
-            android:layout_width="280dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginLeft="50dp"
             android:hint="@string/hint"

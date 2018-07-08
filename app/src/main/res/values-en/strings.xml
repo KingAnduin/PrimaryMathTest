@@ -13,8 +13,10 @@
     <string name="problem_num">Set the number of questions:</string>
     <string name="mark">Grade</string>
     <string name="confirm">Confirm</string>
-    <string name="next">Next</string>
+    <string name="next">Not playing</string>
     <string name="student_mark">This test score</string>
+    <string name="hint">Enter your answer</string>
+    <string name="questionTitle">problem</string>
     <string-array name="languageType">
         <item>Chinese</item>
         <item>English</item>

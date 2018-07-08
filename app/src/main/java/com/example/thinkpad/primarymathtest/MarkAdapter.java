@@ -1,6 +1,7 @@
 package com.example.thinkpad.primarymathtest;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,6 +67,9 @@ public class MarkAdapter extends RecyclerView.Adapter<MarkAdapter.MyHolder>{
         myHolder.questionTv.setText(info.getQuestion());
         myHolder.answerTv.setText(info.getAnswer());
         myHolder.youAnswerTv.setText(list.get(position).yourAnswer);
+        if(info.yourAnswer.equals(info.answer)){
+            myHolder.answerTv.setTextColor(Color.RED);
+        }
     }
 
     @Override

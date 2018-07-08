@@ -13,8 +13,10 @@
     <string name="problem_num">設定問題数：</string>
     <string name="mark">グレード</string>
     <string name="confirm">確認</string>
-    <string name="next">スキップ</string>
+    <string name="next">遊んでいない</string>
     <string name="student_mark">このテストスコア</string>
+    <string name="hint">あなたの答えを入力してください</string>
+    <string name="questionTitle">問題</string>
     <string-array name="languageType">
         <item>中国語</item>
         <item>英語</item>
