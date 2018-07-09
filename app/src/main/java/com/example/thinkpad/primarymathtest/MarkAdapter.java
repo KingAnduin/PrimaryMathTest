@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Created by Thinkpad on 2018/7/5.
- * 码 云
+ * 码云
  */
 
 public class MarkAdapter extends RecyclerView.Adapter<MarkAdapter.MyHolder>{
